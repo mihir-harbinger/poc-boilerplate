@@ -3,7 +3,8 @@
     "id": 1,
     "companyName": "Google",
     "sectors": [
-      "Information Technology"
+      "Information Technology",
+      "Electronic Products"
     ],
     "netProfit": 10000000,
     "averageSalary": 100000,
@@ -23,7 +24,8 @@
     "id": 2,
     "companyName": "Apple",
     "sectors": [
-      "Information Technology"
+      "Information Technology",
+      "Electronic Products"
     ],
     "netProfit": 10000000,
     "averageSalary": 100000,
@@ -43,7 +45,8 @@
     "id": 3,
     "companyName": "Microsoft",
     "sectors": [
-      "Information Technology"
+      "Information Technology",
+      "Electronic Products"
     ],
     "netProfit": 10000000,
     "averageSalary": 100000,
