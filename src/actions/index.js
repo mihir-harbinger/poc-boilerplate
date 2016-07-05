@@ -23,6 +23,13 @@ export const dataLoadFailure = () => {
 export const fetchData = () => {
 	return dispatch => {
 		dispatch(dataLoadRequest())
-		a
+		loadData((data) => {
+			if(data){
+					dispatch(dataLoadSuccess(data))
+			}
+			else{
+					dispatch(dataLoadSuccess(data))
+			}
+		}, 1000)
 	}
 }
