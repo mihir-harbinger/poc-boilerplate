@@ -18,5 +18,165 @@
     "equivalentAdditionalAnnualRevenue": "78000",
     "updatedBy": "admin",
     "updatedOn": 1467192053052
+  },
+  {
+    "id": 2,
+    "companyName": "Apple",
+    "sectors": [
+      "Information Technology"
+    ],
+    "netProfit": 10000000,
+    "averageSalary": 100000,
+    "annualRevenue": 50500000,
+    "netMargin": 11,
+    "currentDisengagement": 49,
+    "targetDisengagement": 40,
+    "totalEmployees": 1349,
+    "customerServiceImprovement": "105666",
+    "productivityImprovement": "456000",
+    "estimatedAnnualProfitImprovement": "120000",
+    "equivalentAdditionalAnnualRevenue": "78000",
+    "updatedBy": "admin",
+    "updatedOn": 1467192053052
+  },
+  {
+    "id": 3,
+    "companyName": "Microsoft",
+    "sectors": [
+      "Information Technology"
+    ],
+    "netProfit": 10000000,
+    "averageSalary": 100000,
+    "annualRevenue": 50500000,
+    "netMargin": 11,
+    "currentDisengagement": 49,
+    "targetDisengagement": 40,
+    "totalEmployees": 1349,
+    "customerServiceImprovement": "105666",
+    "productivityImprovement": "456000",
+    "estimatedAnnualProfitImprovement": "120000",
+    "equivalentAdditionalAnnualRevenue": "78000",
+    "updatedBy": "admin",
+    "updatedOn": 1467192053052
+  },
+  {
+    "id": 4,
+    "companyName": "Amazon",
+    "sectors": [
+      "Information Technology"
+    ],
+    "netProfit": 10000000,
+    "averageSalary": 100000,
+    "annualRevenue": 50500000,
+    "netMargin": 11,
+    "currentDisengagement": 49,
+    "targetDisengagement": 40,
+    "totalEmployees": 1349,
+    "customerServiceImprovement": "105666",
+    "productivityImprovement": "456000",
+    "estimatedAnnualProfitImprovement": "120000",
+    "equivalentAdditionalAnnualRevenue": "78000",
+    "updatedBy": "admin",
+    "updatedOn": 1467192053052
+  },
+  {
+    "id": 5,
+    "companyName": "Harbinger Group",
+    "sectors": [
+      "Information Technology"
+    ],
+    "netProfit": 10000000,
+    "averageSalary": 100000,
+    "annualRevenue": 50500000,
+    "netMargin": 11,
+    "currentDisengagement": 49,
+    "targetDisengagement": 40,
+    "totalEmployees": 1349,
+    "customerServiceImprovement": "105666",
+    "productivityImprovement": "456000",
+    "estimatedAnnualProfitImprovement": "120000",
+    "equivalentAdditionalAnnualRevenue": "78000",
+    "updatedBy": "admin",
+    "updatedOn": 1467192053052
+  },
+  {
+    "id": 6,
+    "companyName": "Flipkart",
+    "sectors": [
+      "Information Technology"
+    ],
+    "netProfit": 10000000,
+    "averageSalary": 100000,
+    "annualRevenue": 50500000,
+    "netMargin": 11,
+    "currentDisengagement": 49,
+    "targetDisengagement": 40,
+    "totalEmployees": 1349,
+    "customerServiceImprovement": "105666",
+    "productivityImprovement": "456000",
+    "estimatedAnnualProfitImprovement": "120000",
+    "equivalentAdditionalAnnualRevenue": "78000",
+    "updatedBy": "admin",
+    "updatedOn": 1467192053052
+  },
+  {
+    "id": 7,
+    "companyName": "Arduino",
+    "sectors": [
+      "Information Technology"
+    ],
+    "netProfit": 10000000,
+    "averageSalary": 100000,
+    "annualRevenue": 50500000,
+    "netMargin": 11,
+    "currentDisengagement": 49,
+    "targetDisengagement": 40,
+    "totalEmployees": 1349,
+    "customerServiceImprovement": "105666",
+    "productivityImprovement": "456000",
+    "estimatedAnnualProfitImprovement": "120000",
+    "equivalentAdditionalAnnualRevenue": "78000",
+    "updatedBy": "admin",
+    "updatedOn": 1467192053052
+  },
+  {
+    "id": 8,
+    "companyName": "Tesla Motors",
+    "sectors": [
+      "Information Technology"
+    ],
+    "netProfit": 10000000,
+    "averageSalary": 100000,
+    "annualRevenue": 50500000,
+    "netMargin": 11,
+    "currentDisengagement": 49,
+    "targetDisengagement": 40,
+    "totalEmployees": 1349,
+    "customerServiceImprovement": "105666",
+    "productivityImprovement": "456000",
+    "estimatedAnnualProfitImprovement": "120000",
+    "equivalentAdditionalAnnualRevenue": "78000",
+    "updatedBy": "admin",
+    "updatedOn": 1467192053052
+  },
+  {
+    "id": 9,
+    "companyName": "Space X",
+    "sectors": [
+      "Information Technology"
+    ],
+    "netProfit": 10000000,
+    "averageSalary": 100000,
+    "annualRevenue": 50500000,
+    "netMargin": 11,
+    "currentDisengagement": 49,
+    "targetDisengagement": 40,
+    "totalEmployees": 1349,
+    "customerServiceImprovement": "105666",
+    "productivityImprovement": "456000",
+    "estimatedAnnualProfitImprovement": "120000",
+    "equivalentAdditionalAnnualRevenue": "78000",
+    "updatedBy": "admin",
+    "updatedOn": 1467192053052
   }
 ]

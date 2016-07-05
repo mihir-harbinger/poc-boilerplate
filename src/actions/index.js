@@ -47,3 +47,10 @@ export const changeLimit = limit => {
 		limit
 	}
 }
+
+export const deleteCompany = id => {
+	return {
+		type: types.DELETE_COMPANY,
+		id
+	}
+}

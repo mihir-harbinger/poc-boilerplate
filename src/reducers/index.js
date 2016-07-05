@@ -35,6 +35,8 @@ const companiesById = (state=initialState.companiesById, action) => {
 					return acc
 				}, {})
 			)
+		case types.DELETE_COMPANY:
+			return deleteCompany(state, action)
 		default:
 			return state
 	}
@@ -44,6 +46,19 @@ const entities = (state=initialState.entities, action) => {
 	switch(action.type){
 		case types.DATA_LOAD_SUCCESS:
 			return action.data.map(company => company.id)
+		case types.DELETE_COMPANY:
+			return state.filter(id => !(id===action.id))
+		default:
+			return state
+	}
+}
+
+const deleteCompany = (state, action) => {
+	switch(action.type){
+		case types.DELETE_COMPANY:
+			const newState = Object.assign({}, state)
+			delete newState[action.id]
+			return newState
 		default:
 			return state
 	}

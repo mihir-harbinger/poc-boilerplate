@@ -14,11 +14,11 @@ export const THEAD = ({headings}) => {
   )
 }
 
-export const TBODY = ({companies}) => {
+export const TBODY = ({companies, onDelete}) => {
   return(
     <tbody>
     {
-      companies.map(company => <TR key={company.id} company={company} />)
+      companies.map(company => <TR key={company.id} company={company} onDelete={onDelete} />)
     }
     </tbody>
   )
@@ -28,9 +28,15 @@ export class TR extends Component{
   constructor(props){
     super(props)
     this.navigateToDetails = this.navigateToDetails.bind(this)
+    this.deleteCompany = this.deleteCompany.bind(this)
   }
   navigateToDetails(id){
     browserHistory.push(`company/${id}`)
+  }
+  deleteCompany(e){
+    // alert(JSON.stringify(this.props.company.id))
+    e.stopPropagation()
+    this.props.onDelete(this.props.company.id)
   }
   render(){
     const { id, companyName, sectors, totalEmployees, updatedBy, updatedOn } = this.props.company
@@ -45,7 +51,7 @@ export class TR extends Component{
         <td style={{textAlign: 'center'}}>
           <i className="options grey icon" title={`Update ${companyName}`}></i>
           {' '}
-          <i className="minus circle grey icon" title={`Remove ${companyName}`}></i>
+          <i className="minus circle grey icon" title={`Remove ${companyName}`} onClick={this.deleteCompany}></i>
         </td>
       </tr>
     )
