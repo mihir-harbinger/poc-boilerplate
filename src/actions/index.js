@@ -33,3 +33,17 @@ export const fetchData = () => {
 		}, 1000)
 	}
 }
+
+export const changePage = page => {
+	return {
+		type: types.CHANGE_PAGE,
+		page
+	}
+}
+
+export const changeLimit = limit => {
+	return {
+		type: types.CHANGE_LIMIT,
+		limit
+	}
+}

@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import {Router, Route, Link, browserHistory} from 'react-router'
+
+import NavigationBar from '../components/NavigationBar'
+import '../components/assets/styles/main.css'
 
 export default class App extends Component {
   render() {
     return (
-    	<div>
-	      <h1>Hello, world.</h1>
-	      <Link to="/about">About</Link>
-	      {this.props.children}
-      	</div>
-    );
+      <div>
+        <NavigationBar />
+        <div className="ui main container">
+          {this.props.children}
+        </div>
+      </div>
+    )
   }
 }

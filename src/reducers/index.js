@@ -3,7 +3,27 @@ import * as types from '../constants'
 
 const initialState = {
 	companiesById: {},
-	entities: []
+	entities: [],
+	currentPage: 0,
+	limit: 5
+}
+
+const currentPage = (state=initialState.currentPage, action) => {
+	switch(action.type){
+		case types.CHANGE_PAGE:
+			return action.page
+		default:
+			return state
+	}
+}
+
+const limit = (state=initialState.limit, action) => {
+	switch(action.type){
+		case types.CHANGE_LIMIT:
+			return action.limit
+		default:
+			return state
+	}
 }
 
 const companiesById = (state=initialState.companiesById, action) => {
@@ -31,7 +51,18 @@ const entities = (state=initialState.entities, action) => {
 
 const rootReducer = combineReducers({
 	companiesById,
-	entities
+	entities,
+	currentPage,
+	limit
 })
+
+export const getCompaniesByPage = (state, page, limit) => {
+	let start = (page*limit)
+	return state.slice(start, start+limit)
+}
+
+export const getCompanyById = (state, id) => {
+	return state[id]
+}
 
 export default rootReducer
