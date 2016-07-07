@@ -62,9 +62,9 @@ export const deleteCompany = id => {
 	}
 }
 
-export const setSearchFilter = text => {
+export const setFilterText = text => {
 	return {
-		type: types.SET_SEARCH_FILTER,
+		type: types.SET_FILTER_TEXT,
 		text
 	}
 }

@@ -91,7 +91,7 @@ export const TFOOT = ({columns, pages, currentPage, onChangePage}) => {
   )
 }
 
-export const Delimiter = ({presets, value, onChange}) => {
+export const Delimiter = ({presets, value, onLimitChange, onFilterChange}) => {
   return(
     <div className="ui grid">
       <div className="two column row">
@@ -101,7 +101,7 @@ export const Delimiter = ({presets, value, onChange}) => {
               <div className="four wide field"></div>
               <div className="eight wide field">
                 <div className="ui fluid icon input">
-                  <input type="text" placeholder="Search by name" />
+                  <input type="text" placeholder="Search by name" onChange={(e) => onFilterChange(e.target.value)} />
                   <i className="search icon"></i>
                 </div>
               </div>

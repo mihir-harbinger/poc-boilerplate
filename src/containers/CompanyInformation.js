@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { getCompanyById } from '../reducers'
+import { getCompanyById } from '../selectors'
 import SectorList from '../components/SectorList'
 import CompanyInformationForm from '../components/CompanyInformationForm'
 import CompanyInformationReadOnly from '../components/CompanyInformationReadOnly'
@@ -30,9 +30,8 @@ class CompanyInformation extends Component{
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const {companyId} = ownProps.params
   return {
-    company: getCompanyById(state.companiesById, companyId)
+    company: getCompanyById(state.companiesById, ownProps.params.companyId)
   }
 }
 

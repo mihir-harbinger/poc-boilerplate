@@ -21,7 +21,7 @@
     "edit",
     "webpack"
   ],
-  "author": "Mihir Karandikar <karandikar.mihir@outlook.com> (http://github.com/mihir-harbinger)",
+  "author": "Mihir Karandikar <mihir.karandikar@harbingergroup.com> (http://github.com/mihir-harbinger)",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.0.20",

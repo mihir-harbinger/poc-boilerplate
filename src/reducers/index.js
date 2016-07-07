@@ -12,7 +12,7 @@ const initialState = {
 
 const searchFilter = (state=initialState.searchFilter, action) => {
 	switch(action.type){
-		case types.SET_SEARCH_FILTER:
+		case types.SET_FILTER_TEXT:
 			return action.text
 		default:
 			return state

@@ -1,11 +1,13 @@
 import { createSelector } from 'reselect'
 
+//non-memoized selectors
 const companiesById = state => state.companiesById
 const entities = state => state.entities
 const searchFilter = state => state.searchFilter
 const currentPage = state => state.currentPage
 const limit = state => state.limit
 
+//memoized selectors
 const getCompanies = createSelector(
   [companiesById, entities, currentPage, limit],
   (companiesById, entities, currentPage, limit) => {
@@ -18,7 +20,7 @@ export const getVisibleCompanies = createSelector(
   [searchFilter, getCompanies],
   (keyword, companies) => {
     if(keyword){
-      return companies.filter(company => company.companyName.search(keyword) > -1)
+      return companies.filter(company => company.companyName.toLowerCase().search(keyword) > -1)
     }
     return companies
   }
@@ -28,3 +30,5 @@ export const getVisiblePages = createSelector(
   [getVisibleCompanies, entities, searchFilter, limit],
   (filteredCompanies, allCompanies, keyword, limit) => Math.ceil(keyword ? filteredCompanies.length : allCompanies.length / limit)
 )
+
+export const getCompanyById = (state, props) => state[props]

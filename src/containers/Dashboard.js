@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { bindActionCreators } from 'redux'
 
-import { changePage, changeLimit, deleteCompany } from '../actions'
+import * as actions from '../actions'
 import { getVisibleCompanies, getVisiblePages } from '../selectors'
 import { THEAD, TBODY, TFOOT, Delimiter } from '../components/TableComponents'
 
@@ -12,6 +12,7 @@ class Dashboard extends Component{
     super(props)
     this.handlePageChange = this.handlePageChange.bind(this)
     this.handleLimitChange = this.handleLimitChange.bind(this)
+    this.handleFilterChange = this.handleFilterChange.bind(this)
     this.handleDeleteCompany = this.handleDeleteCompany.bind(this)
     this.actions = this.props.actions
   }
@@ -28,6 +29,9 @@ class Dashboard extends Component{
       this.actions.deleteCompany(id)
     }
   }
+  handleFilterChange(text){
+    this.actions.setFilterText(text)
+  }
   render(){
     const { companies, pages, limit, currentPage, actions } = this.props
     const headings = ["Sr. No.", "Company Name", "Sectors", "Total Employees", "Updated By", "Updated On", "Actions"]
@@ -38,10 +42,10 @@ class Dashboard extends Component{
           Dashboard
           <div className="sub header">Sample text. Let user know what to do on this page.</div>
         </h2>
+        <Delimiter onLimitChange={this.handleLimitChange} onFilterChange={this.handleFilterChange} value={limit} presets={presets} />
         {
           companies.length > 0 &&
           <div>
-            <Delimiter onChange={this.handleLimitChange} value={limit} presets={presets} />
             <table className="ui selectable celled compact table">
               <THEAD headings={headings} />
               <TBODY companies={companies} columns={headings.length} onDelete={this.handleDeleteCompany} />
@@ -51,9 +55,12 @@ class Dashboard extends Component{
         }
         {
           companies.length < 1 &&
-          <h2 className="ui center aligned icon header">
-            <i className="circular meh icon"></i>
-            No data found
+          <h2 className="ui center aligned icon header grey">
+            <i className="meh icon"></i>
+            <div className="content">
+              No data found
+              <div className="sub header">I couldn't find anything that matches the keyword.</div>
+            </div>
           </h2>
         }
       </div>
@@ -72,7 +79,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    actions: bindActionCreators({changePage, changeLimit, deleteCompany}, dispatch)
+    actions: bindActionCreators(actions, dispatch)
   }
 }
 
