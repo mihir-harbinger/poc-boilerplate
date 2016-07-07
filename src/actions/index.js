@@ -41,10 +41,17 @@ export const changePage = page => {
 	}
 }
 
-export const changeLimit = limit => {
+const _unsafeChangeLimit = limit => {
 	return {
 		type: types.CHANGE_LIMIT,
 		limit
+	}
+}
+
+export const changeLimit = limit => {
+	return dispatch => {
+		dispatch(changePage(0))
+		dispatch(_unsafeChangeLimit(limit))
 	}
 }
 
@@ -52,5 +59,12 @@ export const deleteCompany = id => {
 	return {
 		type: types.DELETE_COMPANY,
 		id
+	}
+}
+
+export const setSearchFilter = text => {
+	return {
+		type: types.SET_SEARCH_FILTER,
+		text
 	}
 }

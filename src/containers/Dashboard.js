@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router'
 import { bindActionCreators } from 'redux'
 
-import { getCompaniesByPage, getCompanyById } from '../reducers'
 import { changePage, changeLimit, deleteCompany } from '../actions'
-import { THEAD, TBODY, TFOOT } from '../components/TableComponents'
+import { getVisibleCompanies, getVisiblePages } from '../selectors'
+import { THEAD, TBODY, TFOOT, Delimiter } from '../components/TableComponents'
 
 class Dashboard extends Component{
   constructor(props){
@@ -29,8 +29,9 @@ class Dashboard extends Component{
     }
   }
   render(){
-    const { companies, pages, currentPage, actions } = this.props
-    const headings = ["Sr. No.", "Company", "Sectors", "Total Employees", "Updated By", "Updated On", "Actions"]
+    const { companies, pages, limit, currentPage, actions } = this.props
+    const headings = ["Sr. No.", "Company Name", "Sectors", "Total Employees", "Updated By", "Updated On", "Actions"]
+    const presets = [5, 10, 15]
     return(
       <div>
         <h2 className="ui header">
@@ -39,11 +40,14 @@ class Dashboard extends Component{
         </h2>
         {
           companies.length > 0 &&
-          <table className="ui selectable fixed celled table">
-            <THEAD headings={headings} />
-            <TBODY companies={companies} columns={headings.length} onDelete={this.handleDeleteCompany} />
-            <TFOOT pages={pages} currentPage={currentPage} columns={headings.length} onChangePage={this.handlePageChange} />
-          </table>
+          <div>
+            <Delimiter onChange={this.handleLimitChange} value={limit} presets={presets} />
+            <table className="ui selectable celled compact table">
+              <THEAD headings={headings} />
+              <TBODY companies={companies} columns={headings.length} onDelete={this.handleDeleteCompany} />
+              <TFOOT pages={pages} currentPage={currentPage} columns={headings.length} onChangePage={this.handlePageChange} />
+            </table>
+          </div>
         }
         {
           companies.length < 1 &&
@@ -56,13 +60,13 @@ class Dashboard extends Component{
     )
   }
 }
+
 const mapStateToProps = state => {
-  const { companiesById, entities, currentPage, limit } = state
   return {
-    companies: getCompaniesByPage(entities, currentPage, limit).map(id => getCompanyById(companiesById, id)),
-    pages: Math.ceil(entities.length / limit),
-    limit,
-    currentPage
+    companies: getVisibleCompanies(state),
+    pages: getVisiblePages(state),
+    limit: state.limit,
+    currentPage: state.currentPage
   }
 }
 

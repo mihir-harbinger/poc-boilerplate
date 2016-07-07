@@ -6,3 +6,5 @@ export const CHANGE_PAGE = 'CHANGE_PAGE'
 export const CHANGE_LIMIT = 'CHANGE_LIMIT'
 
 export const DELETE_COMPANY = 'DELETE_COMPANY'
+
+export const SET_SEARCH_FILTER = 'SET_SEARCH_FILTER'

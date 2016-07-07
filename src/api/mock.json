@@ -181,5 +181,90 @@
     "equivalentAdditionalAnnualRevenue": "78000",
     "updatedBy": "admin",
     "updatedOn": 1467192053052
+  },
+  {
+    "id": 10,
+    "companyName": "Nasa",
+    "sectors": [
+      "Information Technology",
+      "Space Technology",
+      "Geology"
+    ],
+    "netProfit": 10000000,
+    "averageSalary": 100000,
+    "annualRevenue": 50500000,
+    "netMargin": 11,
+    "currentDisengagement": 49,
+    "targetDisengagement": 40,
+    "totalEmployees": 1349,
+    "customerServiceImprovement": "105666",
+    "productivityImprovement": "456000",
+    "estimatedAnnualProfitImprovement": "120000",
+    "equivalentAdditionalAnnualRevenue": "78000",
+    "updatedBy": "admin",
+    "updatedOn": 1467192053052
+  },
+  {
+    "id": 11,
+    "companyName": "General Motors",
+    "sectors": [
+      "Automobile",
+      "Internet of things"
+    ],
+    "netProfit": 10000000,
+    "averageSalary": 100000,
+    "annualRevenue": 50500000,
+    "netMargin": 11,
+    "currentDisengagement": 49,
+    "targetDisengagement": 40,
+    "totalEmployees": 1349,
+    "customerServiceImprovement": "105666",
+    "productivityImprovement": "456000",
+    "estimatedAnnualProfitImprovement": "120000",
+    "equivalentAdditionalAnnualRevenue": "78000",
+    "updatedBy": "admin",
+    "updatedOn": 1467192053052
+  },
+  {
+    "id": 12,
+    "companyName": "GE Money",
+    "sectors": [
+      "Financial Services",
+      "Insurance"
+    ],
+    "netProfit": 10000000,
+    "averageSalary": 100000,
+    "annualRevenue": 50500000,
+    "netMargin": 11,
+    "currentDisengagement": 49,
+    "targetDisengagement": 40,
+    "totalEmployees": 1349,
+    "customerServiceImprovement": "105666",
+    "productivityImprovement": "456000",
+    "estimatedAnnualProfitImprovement": "120000",
+    "equivalentAdditionalAnnualRevenue": "78000",
+    "updatedBy": "admin",
+    "updatedOn": 1467192053052
+  },
+  {
+    "id": 13,
+    "companyName": "CNN Network",
+    "sectors": [
+      "Media",
+      "Television"
+    ],
+    "netProfit": 10000000,
+    "averageSalary": 100000,
+    "annualRevenue": 50500000,
+    "netMargin": 11,
+    "currentDisengagement": 49,
+    "targetDisengagement": 40,
+    "totalEmployees": 1349,
+    "customerServiceImprovement": "105666",
+    "productivityImprovement": "456000",
+    "estimatedAnnualProfitImprovement": "120000",
+    "equivalentAdditionalAnnualRevenue": "78000",
+    "updatedBy": "admin",
+    "updatedOn": 1467192053052
   }
 ]

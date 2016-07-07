@@ -90,3 +90,32 @@ export const TFOOT = ({columns, pages, currentPage, onChangePage}) => {
     </tfoot>
   )
 }
+
+export const Delimiter = ({presets, value, onChange}) => {
+  return(
+    <div className="ui grid">
+      <div className="two column row">
+        <div className="right floated column">
+          <div className="ui form">
+            <div className="fields">
+              <div className="four wide field"></div>
+              <div className="eight wide field">
+                <div className="ui fluid icon input">
+                  <input type="text" placeholder="Search by name" />
+                  <i className="search icon"></i>
+                </div>
+              </div>
+              <div className="four wide field">
+                <select className="ui dropdown" value={value} onChange={(e) => onChange(+e.target.value)}>
+                  {
+                    presets.map(preset => <option key={preset} value={preset}>{preset} Records</option>)
+                  }
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

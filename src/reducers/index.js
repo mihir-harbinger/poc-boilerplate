@@ -2,10 +2,32 @@ import { combineReducers } from 'redux'
 import * as types from '../constants'
 
 const initialState = {
+	searchFilter: '',
+	isFetching: false,
 	companiesById: {},
 	entities: [],
 	currentPage: 0,
 	limit: 5
+}
+
+const searchFilter = (state=initialState.searchFilter, action) => {
+	switch(action.type){
+		case types.SET_SEARCH_FILTER:
+			return action.text
+		default:
+			return state
+	}
+}
+
+const isFetching = (state=initialState.isFetching, action) => {
+	switch(action.type){
+		case types.DATA_LOAD_REQUEST:
+			return true
+		case types.DATA_LOAD_SUCCESS:
+			return false
+		default:
+			return state
+	}
 }
 
 const currentPage = (state=initialState.currentPage, action) => {
@@ -65,19 +87,12 @@ const deleteCompany = (state, action) => {
 }
 
 const rootReducer = combineReducers({
+	searchFilter,
+	isFetching,
 	companiesById,
 	entities,
 	currentPage,
 	limit
 })
-
-export const getCompaniesByPage = (state, page, limit) => {
-	let start = (page*limit)
-	return state.slice(start, start+limit)
-}
-
-export const getCompanyById = (state, id) => {
-	return state[id]
-}
 
 export default rootReducer
