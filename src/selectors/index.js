@@ -9,8 +9,11 @@ const limit = state => state.limit
 
 //memoized selectors
 const getCompanies = createSelector(
-  [companiesById, entities, currentPage, limit],
-  (companiesById, entities, currentPage, limit) => {
+  [companiesById, entities, currentPage, limit, searchFilter],
+  (companiesById, entities, currentPage, limit, keyword) => {
+    if(keyword){
+      return entities.map(id => companiesById[id])
+    }
     let start = currentPage*limit
     return (entities.slice(start, start + limit)).map(id => companiesById[id])
   }

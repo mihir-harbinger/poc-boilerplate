@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 
 import * as actions from '../actions'
 import { getVisibleCompanies, getVisiblePages } from '../selectors'
-import { THEAD, TBODY, TFOOT, Delimiter } from '../components/TableComponents'
+import { THEAD, TBODY, TFOOT, Delimiter, NoDataFound } from '../components/TableComponents'
 
 class Dashboard extends Component{
   constructor(props){
@@ -55,13 +55,7 @@ class Dashboard extends Component{
         }
         {
           companies.length < 1 &&
-          <h2 className="ui center aligned icon header grey">
-            <i className="meh icon"></i>
-            <div className="content">
-              No data found
-              <div className="sub header">I couldn't find anything that matches the keyword.</div>
-            </div>
-          </h2>
+          <NoDataFound />
         }
       </div>
     )

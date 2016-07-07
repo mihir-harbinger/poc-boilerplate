@@ -106,7 +106,7 @@ export const Delimiter = ({presets, value, onLimitChange, onFilterChange}) => {
                 </div>
               </div>
               <div className="four wide field">
-                <select className="ui dropdown" value={value} onChange={(e) => onChange(+e.target.value)}>
+                <select className="ui dropdown" value={value} onChange={(e) => onLimitChange(+e.target.value)}>
                   {
                     presets.map(preset => <option key={preset} value={preset}>{preset} Records</option>)
                   }
@@ -117,5 +117,17 @@ export const Delimiter = ({presets, value, onLimitChange, onFilterChange}) => {
         </div>
       </div>
     </div>
+  )
+}
+
+export const NoDataFound = () => {
+  return(
+    <h2 className="ui center aligned icon header grey">
+      <i className="meh icon"></i>
+      <div className="content">
+        No data found
+        <div className="sub header">I couldn't find anything that matches the keyword.</div>
+      </div>
+    </h2>    
   )
 }
