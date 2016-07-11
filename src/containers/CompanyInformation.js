@@ -16,11 +16,11 @@ class CompanyInformation extends Component{
       <div>
         <h1>{company.companyName}</h1>
         <SectorList sectors={company.sectors} />
-        <div className="ui stackable two column grid" style={{marginTop: '20px'}}>
-          <div className="column">
+        <div className="ui stackable three column wide grid" style={{marginTop: '20px'}}>
+          <div className="six wide column">
             <CompanyInformationForm company={company} />
           </div>
-          <div className="column">
+          <div className="ten wide column">
             <CompanyInformationReadOnly company={company} />
           </div>
         </div>

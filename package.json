@@ -37,11 +37,13 @@
     "redux-logger": "^2.6.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1"
+    "webpack-dev-server": "^1.12.1",
+    "json-loader": "^0.5.4",
+    "file-loader": "^0.9.0",
+    "url-loader": "^0.5.7"
   },
   "dependencies": {
-    "file-loader": "^0.9.0",
-    "json-loader": "^0.5.4",
+    "fuse.js": "^2.2.0",
     "moment": "^2.14.1",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
@@ -50,7 +52,6 @@
     "redux": "^3.5.2",
     "redux-thunk": "^2.1.0",
     "reselect": "^2.5.3",
-    "semantic-ui-css": "^2.2.1",
-    "url-loader": "^0.5.7"
+    "semantic-ui-css": "^2.2.1"
   }
 }

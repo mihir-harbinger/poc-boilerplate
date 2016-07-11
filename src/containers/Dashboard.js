@@ -17,7 +17,7 @@ class Dashboard extends Component{
     this.actions = this.props.actions
   }
   handlePageChange(page){
-    if(page >= 0 && page < this.props.pages){
+    if((page >= 0 && page < this.props.pages) && (page !== this.props.currentPage)){
       this.actions.changePage(page)
     }
   }
@@ -30,11 +30,17 @@ class Dashboard extends Component{
     }
   }
   handleFilterChange(text){
-    this.actions.setFilterText(text)
+    text = text.trim()
+    if(text === "" && this.props.searchFilter !== ""){
+      this.actions.setFilterText(text)
+    }
+    else if(text !== ""){
+      this.actions.setFilterText(text)
+    }
   }
   render(){
-    const { companies, pages, limit, currentPage, actions } = this.props
-    const headings = ["Sr. No.", "Company Name", "Sectors", "Total Employees", "Updated By", "Updated On", "Actions"]
+    const { totalRecords, searchFilter, companies, pages, limit, currentPage, actions } = this.props
+    const headings = ["No.", "Company Name", "Sectors", "Total Employees", "Updated By", "Updated On", "Actions"]
     const presets = [5, 10, 15]
     return(
       <div>
@@ -42,14 +48,33 @@ class Dashboard extends Component{
           Dashboard
           <div className="sub header">Sample text. Let user know what to do on this page.</div>
         </h2>
-        <Delimiter onLimitChange={this.handleLimitChange} onFilterChange={this.handleFilterChange} value={limit} presets={presets} />
+        <Delimiter
+          onLimitChange={this.handleLimitChange}
+          onFilterChange={this.handleFilterChange}
+          value={limit}
+          presets={presets}
+          searchFilter={searchFilter}
+        />
         {
           companies.length > 0 &&
           <div>
             <table className="ui selectable celled compact table">
               <THEAD headings={headings} />
-              <TBODY companies={companies} columns={headings.length} onDelete={this.handleDeleteCompany} />
-              <TFOOT pages={pages} currentPage={currentPage} columns={headings.length} onChangePage={this.handlePageChange} />
+              <TBODY
+                searchFilter={searchFilter}
+                companies={companies}
+                onDelete={this.handleDeleteCompany}
+                columns={headings.length}
+                currentPage={currentPage}
+                limit={limit}
+                totalRecords={totalRecords}
+              />
+              <TFOOT
+                pages={pages}
+                currentPage={currentPage}
+                columns={headings.length}
+                onChangePage={this.handlePageChange}
+              />
             </table>
           </div>
         }
@@ -64,6 +89,8 @@ class Dashboard extends Component{
 
 const mapStateToProps = state => {
   return {
+    totalRecords: state.entities.length,
+    searchFilter: state.searchFilter,
     companies: getVisibleCompanies(state),
     pages: getVisiblePages(state),
     limit: state.limit,

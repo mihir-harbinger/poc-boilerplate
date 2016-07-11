@@ -14,11 +14,17 @@ export const THEAD = ({headings}) => {
   )
 }
 
-export const TBODY = ({companies, onDelete}) => {
+export const TBODY = ({searchFilter, companies, onDelete, columns, currentPage, limit, totalRecords}) => {
   return(
     <tbody>
     {
       companies.map(company => <TR key={company.id} company={company} onDelete={onDelete} />)
+    }
+    {
+      searchFilter === "" &&
+      <tr>
+        <td colSpan={columns}><p style={{color: '#999', textAlign: 'right'}}><i>Showing {currentPage*limit+1}-{currentPage*limit+limit > totalRecords  ? totalRecords : currentPage*limit+limit} of {totalRecords} records</i></p></td>
+      </tr>
     }
     </tbody>
   )
@@ -91,7 +97,7 @@ export const TFOOT = ({columns, pages, currentPage, onChangePage}) => {
   )
 }
 
-export const Delimiter = ({presets, value, onLimitChange, onFilterChange}) => {
+export const Delimiter = ({searchFilter, presets, value, onLimitChange, onFilterChange}) => {
   return(
     <div className="ui grid">
       <div className="two column row">
@@ -101,7 +107,7 @@ export const Delimiter = ({presets, value, onLimitChange, onFilterChange}) => {
               <div className="four wide field"></div>
               <div className="eight wide field">
                 <div className="ui fluid icon input">
-                  <input type="text" placeholder="Search by name" onChange={(e) => onFilterChange(e.target.value)} />
+                  <input type="text" placeholder="Search by name" defaultValue={searchFilter} onChange={(e) => onFilterChange(e.target.value)} />
                   <i className="search icon"></i>
                 </div>
               </div>
@@ -126,8 +132,8 @@ export const NoDataFound = () => {
       <i className="meh icon"></i>
       <div className="content">
         No data found
-        <div className="sub header">I couldn't find anything that matches the keyword.</div>
+        <div className="sub header">Couldn't find anything that matches the keyword.</div>
       </div>
-    </h2>    
+    </h2>
   )
 }

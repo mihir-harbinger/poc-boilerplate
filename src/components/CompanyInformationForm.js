@@ -3,14 +3,17 @@ import React from 'react'
 const CompanyInformationForm = ({company}) => {
   const {
     companyName,
+    totalEmployees,
     currentDisengagement,
     targetDisengagement,
+    averageSalary,
+    annualRevenue,
     productivityImprovement,
     customerServiceImprovement,
     estimatedAnnualProfitImprovement,
     equivalentAdditionalAnnualRevenue
   } = company
-  
+
   return(
     <form className="ui form">
       <div className="ui equal width form">
@@ -18,6 +21,13 @@ const CompanyInformationForm = ({company}) => {
           <div className="field">
             <label>Company Name</label>
             <input type="text" placeholder="Company Name" defaultValue={companyName} />
+          </div>
+        </div>
+        <h4 className="ui dividing header">Disengagement Level</h4>
+        <div className="fields">
+          <div className="field">
+            <label>Total Employees</label>
+            <input type="text" placeholder="Current Disengagement" defaultValue={totalEmployees} />
           </div>
         </div>
         <div className="fields">
@@ -30,43 +40,33 @@ const CompanyInformationForm = ({company}) => {
             <input type="text" placeholder="Target Disengagement" defaultValue={targetDisengagement} />
           </div>
         </div>
+        <h4 className="ui dividing header">Salary Revenue</h4>
         <div className="fields">
           <div className="field">
-            <label>Customer Service Improvement</label>
+            <label>Average Salary</label>
             <div className="ui right labeled input">
               <div className="ui label">$</div>
-              <input type="text" placeholder="Amount" defaultValue={customerServiceImprovement} />
+              <input type="text" placeholder="Amount" defaultValue={averageSalary} />
               <div className="ui basic label">.00</div>
             </div>
           </div>
         </div>
         <div className="fields">
           <div className="field">
-            <label>Productivity Improvement</label>
+            <label>Annual Revenue</label>
             <div className="ui right labeled input">
               <div className="ui label">$</div>
-              <input type="text" placeholder="Amount" defaultValue={productivityImprovement} />
+              <input type="text" placeholder="Amount" defaultValue={annualRevenue} />
               <div className="ui basic label">.00</div>
             </div>
           </div>
         </div>
         <div className="fields">
           <div className="field">
-            <label>Estimated Annual Net Profit Improvement</label>
+            <label>Net Margin</label>
             <div className="ui right labeled input">
-              <div className="ui label">$</div>
-              <input type="text" placeholder="Amount" defaultValue={estimatedAnnualProfitImprovement} />
-              <div className="ui basic label">.00</div>
-            </div>
-          </div>
-        </div>
-        <div className="fields">
-          <div className="field">
-            <label>Equivalent Additional Annual Revenue</label>
-            <div className="ui right labeled input">
-              <div className="ui label">$</div>
               <input type="text" placeholder="Amount" defaultValue={equivalentAdditionalAnnualRevenue} />
-              <div className="ui basic label">.00</div>
+              <div className="ui basic label">&nbsp;&nbsp;&nbsp;%</div>
             </div>
           </div>
         </div>
